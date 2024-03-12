@@ -1,17 +1,23 @@
 <?php 
 
-$words = array("casa","playa","lago");
-$char = "a";
-$coincidencia = true;
+function buscarLetra(array $words, string $char) : void{
 
-foreach ($words as $word) {
-    if(strpos($word, $char) === false){
-        $coincidencia = false;
+    $coincidencia = true;
+
+    foreach ($words as $word) {
+        if(strpos($word, $char) === false){
+            $coincidencia = false;
+        }
+    }
+    if($coincidencia){
+        echo "La letra '" . $char . "' se encuentra en todas las palabras.";
+    } else {
+        echo "La letra '" . $char . "' NO se encuentra en todas las palabras.";
     }
 }
-if($coincidencia){
-    echo "true";
-} else {
-    echo "false";
-}
+
+$words = array("casa","playa","lago");
+$char = "a";
+
+buscarLetra($words,$char);
 ?>
